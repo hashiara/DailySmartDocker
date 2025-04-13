@@ -1,0 +1,43 @@
+services:
+  ds-nginx:
+    container_name: "ds-nginx"
+    build:
+      context: ./docker/nginx
+    depends_on:
+      - ds-app
+    ports:
+      - 80:80
+    volumes:
+      - ./:/src
+
+  ds-app:
+    container_name: "ds-app"
+    build:
+      context: ./docker/php
+    depends_on:
+      - ds-mysql
+    ports:
+      - 5173:5173
+    volumes:
+      - ./:/src
+      - /src/node_modules
+      - /src/vendor
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+
+  ds-mysql:
+    image: mysql:8.0.33
+    command: --max_allowed_packet=32505856
+    container_name: "ds-mysql"
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=password
+    ports:
+      - 3306:3306
+
+  ds-redis:
+    image: redis:alpine
+    container_name: "ds-redis"
+    ports:
+      - 16379:6379
