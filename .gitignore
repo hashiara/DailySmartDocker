@@ -4,6 +4,7 @@
 /public/hot
 /public/storage
 /storage/*.key
+/storage
 /vendor
 .env
 .env.backup
@@ -22,6 +23,7 @@ yarn-error.log
 docker/nginx/logs/
 
 # MySQL関連（例：永続化ディレクトリや一時ファイル）
+docker/mysql
 docker/mysql/data/
 docker/mysql/tmp/
 docker/mysql/logs/
@@ -30,3 +32,5 @@ docker/mysql/*.sock
 
 # ログやその他一時ファイル
 *.log
+*.sqlite
+.htaccess

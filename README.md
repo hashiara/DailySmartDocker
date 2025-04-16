@@ -1,16 +1,21 @@
 # 起動～停止手順
+## 前提
+・「Docker Desktop」をダウンロード済みであること。
+・GitからプロジェクトフォルダをClone済みであること。
+
 ## Docker起動
-1. CMDやPowerShellなどでプロジェクトフォルダ（DailySmart）へ移動。
-2. "docker compose up -d"
+1. Docker Desktopを起動。
+2. CMDやPowerShellなどでプロジェクトフォルダ（DailySmart）へ移動。
+3. "docker compose up -d"
 ※設定ファイル（Dockerfileなど）を修正した場合は"--build"オプションを末尾に付ける。
-3. "docker compose exec ds-app bash"
-4. "npm run dev"
-5. [http://localhost]にアクセス。
+4. "docker compose exec ds-app bash"
+5. "npm run dev"
+6. [http://localhost]にアクセス。
 
 ## 終了時
-6. Ctrl + C
-7. "exit"
-8. "docker compose down"
+7. Ctrl + C
+8. "exit"
+9. "docker compose down"
 
 
 # 補足
