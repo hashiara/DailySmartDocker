@@ -3,21 +3,35 @@
 ・「Docker Desktop」をダウンロード済みであること。
 ・GitからプロジェクトフォルダをClone済みであること。
 
-## Docker起動
+## Docker初回起動時
+1. /docker/nginx/ 配下に[logs]ディレクトリを作成。
+2. .envファイルをプロジェクトフォルダ配下に配置。
+3. Docker Desktopを起動。
+4. CMDやPowerShellなどでプロジェクトフォルダ（DailySmart）へ移動。
+5. "docker compose up -d --build"
+6. "docker compose exec ds-app bash"
+7. "php artisan migrate"
+8. "npm run dev"
+9. [http://localhost]にアクセス。
+
+## Docker起動時（2回目以降）
 1. Docker Desktopを起動。
 2. CMDやPowerShellなどでプロジェクトフォルダ（DailySmart）へ移動。
 3. "docker compose up -d"
 ※設定ファイル（Dockerfileなど）を修正した場合は"--build"オプションを末尾に付ける。
 4. "docker compose exec ds-app bash"
-5. "npm run dev"
-6. [http://localhost]にアクセス。
+6. "npm run dev"
+7. [http://localhost]にアクセス。
 
 ## 終了時
-7. Ctrl + C
-8. "exit"
-9. "docker compose down"
+8. Ctrl + C
+9. "exit"
+10. "docker compose down"
 
 
 # 補足
 ## 環境構築参考
 ・Docker構築：https://qiita.com/hitotch/items/869070c3a9f474a358ea
+
+## コマンド
+・artisan関連コマンドはコンテナ内で実行。
