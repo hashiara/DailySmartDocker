@@ -35,3 +35,14 @@
 
 ## コマンド
 ・artisan関連コマンドはコンテナ内で実行。
+
+## mysqlコンテナが起動しない場合
+1. MySQLコンテナとボリュームを完全削除
+docker compose down -v
+2. 壊れたローカルデータを削除（※重要）
+Get-ChildItem .\docker\mysql\ | Remove-Item -Recurse -Force
+3. 再ビルドして起動
+docker compose up -d --build
+4. ds-app に入って migrate 実行
+docker compose exec ds-app bash
+php artisan migrate
