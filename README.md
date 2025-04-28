@@ -35,6 +35,11 @@
 
 ## コマンド
 ・artisan関連コマンドはコンテナ内で実行。
+### キャッシュ削除
+・php artisan config:clear
+・php artisan cache:clear
+・php artisan route:clear
+・php artisan view:clear
 
 ## mysqlコンテナが起動しない場合
 1. MySQLコンテナとボリュームを完全削除
