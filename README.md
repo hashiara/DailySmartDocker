@@ -7,26 +7,27 @@
 1. /docker/nginx/ 配下に[logs]ディレクトリを作成。
 2. .envファイルをプロジェクトフォルダ配下に配置。
 3. Docker Desktopを起動。
-4. CMDやPowerShellなどでプロジェクトフォルダ（DailySmart）へ移動。
+4. エディターのターミナルを開きプロジェクトフォルダ（DailySmart）へ移動。
 5. "docker compose up -d --build"
 6. "docker compose exec ds-app bash"
 7. "php artisan migrate"
-8. "npm run dev"
-9. [http://localhost]にアクセス。
+8. CMDやPowerShellなどを開きプロジェクトフォルダへ移動。
+9. "npm run dev"
+10. [http://localhost]にアクセス。
 
 ## Docker起動時（2回目以降）
 1. Docker Desktopを起動。
-2. CMDやPowerShellなどでプロジェクトフォルダ（DailySmart）へ移動。
+2. エディターのターミナルを開きプロジェクトフォルダ（DailySmart）へ移動。
 3. "docker compose up -d"
 ※設定ファイル（Dockerfileなど）を修正した場合は"--build"オプションを末尾に付ける。
-4. "docker compose exec ds-app bash"
-6. "npm run dev"
-7. [http://localhost]にアクセス。
+4. CMDやPowerShellなどを開きプロジェクトフォルダへ移動。
+5. "npm run dev"
+6. [http://localhost]にアクセス。
 
 ## 終了時
-8. Ctrl + C
-9. "exit"
-10. "docker compose down"
+1. Ctrl + C
+2. "exit"
+3. "docker compose down"
 
 
 # 補足
