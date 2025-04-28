@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\LoginedController;
+use App\Http\Controllers\AddDataController;
 use Illuminate\Support\Facades\Route;
 
 /*
