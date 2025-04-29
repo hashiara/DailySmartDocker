@@ -29,30 +29,6 @@ class LoginedController extends Controller
         return view('main.index', compact('user', 'title', 'jsons', 'posts'));
     }
 
-    /**
-     * Display the login view.
-     */
-    // public function urlError()
-    // {
-    //     return view('auth.url-error');
-    // }
-
-    /**
-     * Display the login view.
-     */
-    public function create(Request $request, $userId)
-    {
-        $users = User::all();
-        $user = $users->where('user_id', $userId)->first();
-
-        if ($user) {
-            session(['user' => $user]);
-            return redirect()->route('profile.edit');
-        }
-
-        return view('auth.register', compact('userId'));
-    }
-
     // ログアウト
     public function logout(Request $request): RedirectResponse
     {
@@ -81,5 +57,11 @@ class LoginedController extends Controller
         }
 
         return redirect()->route('login.page');
+    }
+
+    // URLエラー画面
+    public function urlError()
+    {
+        return view('auth.url-error');
     }
 }

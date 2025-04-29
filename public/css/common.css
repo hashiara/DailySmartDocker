@@ -9,12 +9,6 @@ input::placeholder {
     opacity: 0.6 !important;
 }
 
-.eye {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
 .form-content {
     margin: 10px 10px;
 }
@@ -23,4 +17,8 @@ input::placeholder {
     width: 80px;
     height: 80px;
     border-radius: 50%;
+}
+
+#eyeIcon {
+    cursor: pointer;
 }

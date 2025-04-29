@@ -23,6 +23,11 @@ header {
     border-top: 2px rgb(60, 60, 60) solid;
     width: 50%;
     margin: 0 auto;
+    cursor: pointer;
+}
+
+.hamburger-content:hover {
+    background-color: #aec1d4;
 }
 
 .hamburger {

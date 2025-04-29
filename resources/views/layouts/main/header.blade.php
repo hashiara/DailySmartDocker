@@ -7,7 +7,7 @@
 
     @yield('headerTitle')
 
-    <button id="hamburger" class="btn col" type="button"
+    <button id="hamburger" class="btn col border-0" type="button"
         data-toggle="collapse"
         data-target=".hamburger-content"
         aria-expanded="false"
