@@ -1,6 +1,7 @@
 # 起動～停止手順
 ## 前提
 ・「Docker Desktop」をダウンロード済みであること。
+・「DBever Community」をダウンロード済みであること。
 ・GitからプロジェクトフォルダをClone済みであること。
 ・.envファイルを受領済みであること。
 ・city_in_prefecture.jsonを受領済みであること。
@@ -28,10 +29,27 @@
     1. "npm run dev"
 6. http://localhost にアクセス。
 
-## 終了時
+## Docker終了時
 1. Ctrl + C（CMDのnpmを抜ける）
 2. "exit"（エディターのターミナルでコンテナから抜ける）
 3. "docker compose down"（エディターのターミナルでコンテナを停止する）
+
+## DBツール設定
+1. DBever画面左上の接続ボタンから「MySQL」を選択。
+2. 以下の情報を入力。
+　・Connect by：Host
+　・Server Host：localhost
+　・Database：.envの「DB_DATABASE」参照
+　・ユーザー名：.envの「DB_USERNAME」参照
+　・パスワード：.envの「DB_PASSWORD」参照
+3. テスト接続してドライバをダウンロード。
+4. 再度テスト接続。
+5. 問題なければ終了。
+6. usersテーブルの各カラムにデータを挿入。
+　・user_id：Uから始まる33桁の英数字
+　・otk：12桁の大文字小文字混合英数字 + 記号
+　・created_at：デフォルト値（現在日時）
+　・updated_at：デフォルト値（現在日時）
 
 
 # 補足
